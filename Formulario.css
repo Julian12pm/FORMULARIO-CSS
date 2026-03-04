@@ -10,15 +10,67 @@
 
 body {
     background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+    /* Cambiamos a columna para que header, main y footer se apilen de arriba a abajo */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
 }
 
 /* =========================================
-   2. CONTENEDOR PRINCIPAL
+   2. HEADER Y FOOTER (Para que combinen)
    ========================================= */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+header h1 {
+    color: #222;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+header a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Empuja el footer siempre al fondo */
+}
+
+/* =========================================
+   3. CONTENEDOR PRINCIPAL Y FORMULARIO
+   ========================================= */
+main {
+    flex: 1; /* Ocupa todo el espacio disponible en medio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
 .form-container {
     background-color: #ffffff;
     width: 100%;
@@ -38,7 +90,7 @@ body {
 }
 
 /* =========================================
-   3. GRUPOS DE CAMPOS
+   4. GRUPOS DE CAMPOS
    ========================================= */
 .form-group {
     margin-bottom: 20px;
@@ -80,7 +132,7 @@ textarea {
 }
 
 /* =========================================
-   4. BOTÓN
+   5. BOTÓN
    ========================================= */
 button {
     width: 100%;
@@ -101,7 +153,7 @@ button:hover {
 }
 
 /* =========================================
-   5. ANIMACIÓN SUAVE
+   6. ANIMACIÓN SUAVE
    ========================================= */
 @keyframes fadeIn {
     from {
@@ -115,11 +167,13 @@ button:hover {
 }
 
 /* =========================================
-   6. RESPONSIVE
+   7. RESPONSIVE
    ========================================= */
 @media (max-width: 480px) {
     .form-container {
         padding: 25px;
-        margin: 20px;
+    }
+    main {
+        padding: 20px 15px;
     }
 }
